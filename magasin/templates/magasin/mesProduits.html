@@ -1,0 +1,32 @@
+{% extends 'magasin/base.html' %}
+{% block title %} Catalogue de produits {% endblock  %}
+{% block content %}
+<!-- body -->
+<div class="container-fluid mt-3">
+<div class="row">
+   
+<!-- all products -->
+<div id='products' class="col-lg-9 mx-auto" style="margin:5px;">
+<div class="row mx-auto">
+{% for product in products %}
+<div id={{product.id}} style="width: 350px; margin:5px;">
+<img style="width: 150px; height: 150px; padding: 5px;" alt="Card image cap" src="/media/{{product.img}}"  >
+<div >
+<p ><b>{{product.libélle}}</b></p>
+<p ><b>{{product.description}}</b></p>
+<p ><b>{{product.prix}}</b></p>
+<p ><b>{{product.type}}</b></p>
+
+<a href="{% url 'detailProduit' product_id=product.id %}" class="btn btn-primary">Voir détails</a>
+<a href="{% url 'modifierProduit' product.id %}" class="btn btn-success">Modifier</a>
+<a href="{% url 'effacerProduit' product.id %}" class="btn btn-danger" >Supprimer</a>
+
+
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'magasin/base.html' %}
+
+{% block content %}
+<form  method="POST">
+  <div class="container">
+    <div class="row mt-5 mb-5 shadow">
+        <div class="col-lg-6 shadow p4">
+
+  <body>
+    <h1>Contact</h1>
+    <form method="post" action=".">
+      {% csrf_token %}
+
+      {{form.as_p }}
+      <button> submit</button>
+    </form>
+
+    
+  </body>
+  
+</div>
+</div>
+<div class="map" id="contact" style="center">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9271.100443739711!2d10.76784524761495!3d34.759900246882786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1301d2c1f3c2991f%3A0xab7f8817c80e9617!2sHigher%20Institute%20of%20Technological%20Studies%20of%20Sfax!5e0!3m2!1sen!2sus!4v1684279564236!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+
+
+  {% endblock %}
+
+  

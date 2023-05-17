@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>
+		{% block title %} {% endblock %}
+	</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/base.css'%}">    
+	{% block styles %} {% endblock %}
+
+
+
+  
+</head>
+<body >
+	{% block body %} {% endblock %}
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(11, 0, 105) ;text-align: center ;color: rgb(11, 0, 105); font-weight: bold;">
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    </li>
+                    <a class="nav-link active" aria-current="page" href="#" ><i class="bi bi-basket" style="color: white" ></i >Ayedy</a>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="{% url 'index' %}" style="color: white">Acceuil</a>
+                      </li>
+                     <li class="nav-item active">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white"> Catalogue</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="{% url 'Catalogue'%}" >Catalogue</a></li>
+                          <li><a class="dropdown-item" href="{% url 'manipprod'%}" >Ajouter Produit</a></li>
+                        </ul>
+                            </li>
+                    <li class="nav-item active">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white"> Fournisseurs</a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'fournisseurs'%}" >Fournisseurs</a></li>
+                        <li><a class="dropdown-item" href="{% url 'nouvFournisseur'%}" >Ajouter fournisseur</a></li>
+                      </ul>
+                      <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'cont' %}"   >Contact</a>
+                    </li>
+                    </li>
+
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{% url 'admin:index' %}"> <span class="sr-only" style="color: white">Administration</span></a>
+                                        </li>
+                        
+                </ul>
+              </div>
+            </div>
+            <li class="nav-item ">
+              <a class="nav-link" href="{% url 'map' %}" style="color: white">Map</a>
+              </li>
+            
+        <div>
+            <li class="nav-item active">
+              <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white"> Compte</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                   <li><a class="dropdown-item" href="{% url 'login'%}" >Connexion</a></li>
+                   <li><a class="dropdown-item" href="{% url 'logout'%}" >Déconnexion</a></li>
+                  <li><a class="dropdown-item" href="{% url 'register'%}" >Inscription</a></li>
+                  </ul>
+          </li>
+        </div>
+          </nav>
+          
+        
+        
+
+
+    {% block content %} {% endblock %}
+    
+</body>
+<footer style="background-color: rgb(11, 0, 105) ;text-align: center ;color: rgb(11, 0, 105); font-weight: bold;">
+        <p class="text-center text-white"> Tous droits reservé , créé par Ayedy Youssef </p>
+    </footer>
+</html>

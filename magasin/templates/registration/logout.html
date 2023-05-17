@@ -1,0 +1,12 @@
+{% extends "magasin/base.html" %}
+{% block content %}
+<h2>Vous êtes déconnecté. </h2>
+<style>h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+  </style>
+<a href="{% url 'login' %}">Se reconnecter</a></br>
+<a href="{% url 'Catalogue' %}">retour au catalogue</a>
+{% endblock %}
